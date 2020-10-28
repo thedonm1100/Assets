@@ -5,7 +5,7 @@ using UnityEngine;
 public class AutoCookie : MonoBehaviour
 {
 
-    public bool CreatingCookie = false;
+    public static bool CreatingCookie = false;
     public static int CookieIncrease = 1;
     public int InternalIncrease;
 
@@ -13,6 +13,7 @@ public class AutoCookie : MonoBehaviour
 
     void Update()
     {
+        
         CookieIncrease = GlobalBaker.bakePerSec;
         InternalIncrease = CookieIncrease;
         if (CreatingCookie == false)
@@ -25,6 +26,7 @@ public class AutoCookie : MonoBehaviour
 
     IEnumerator CreateTheCookie()
     {
+        
         GlobalCookies.CookieCount += InternalIncrease;
         yield return new WaitForSeconds(1);
         CreatingCookie = false;

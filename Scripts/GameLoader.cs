@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class GameLoader : MonoBehaviour
 {
+
     public int savedCookies;
     public int savedCash;
     public int savedBakers;
@@ -11,31 +14,45 @@ public class GameLoader : MonoBehaviour
     public int savedValue;
     public int savedPerSec;
     public int soldPerSec;
+    public int shopsValue;
+    public int bakersValue;
+
+
+
+
+    
     void Start()
     {
         if (MainMenuOptions.isLoading == true)
         {
-            savedCookies = PlayerPrefs.GetInt("Saved Cookies");
+            savedCookies = PlayerPrefs.GetInt("SavedCookies");
             GlobalCookies.CookieCount = savedCookies;
-            savedCash = PlayerPrefs.GetInt("Saved Cash");
+            savedCash = PlayerPrefs.GetInt("SavedCash");
             GlobalCash.CashCount = savedCash;
-            savedBakers = PlayerPrefs.GetInt("Saved Bakers");
+            savedBakers = PlayerPrefs.GetInt("SavedBakers");
             GlobalBaker.numberOfBakers = savedBakers;
-            savedShops = PlayerPrefs.GetInt("Saved Shops");
+            savedShops = PlayerPrefs.GetInt("SavedShops");
             GlobalShop.numberOfShops = savedShops;
             savedValue = PlayerPrefs.GetInt("SaveValue");
             SaveGame.saveValue = savedValue;
-            savedPerSec = PlayerPrefs.GetInt("Saved PerSecond");
+            savedPerSec = PlayerPrefs.GetInt("SavedPerSec");
             GlobalBaker.bakePerSec = savedPerSec;
-            soldPerSec = PlayerPrefs.GetInt("Saved PerSecond");
+            soldPerSec = PlayerPrefs.GetInt("SoldPerSec");
             GlobalShop.shopPerSec = soldPerSec;
+            shopsValue = PlayerPrefs.GetInt("ShopValue");
+            GlobalShop.shopValue = shopsValue;
+            bakersValue = PlayerPrefs.GetInt("BakerValue");
+            GlobalBaker.bakerValue = bakersValue;
+           
             
 
 
 
 
+
         }
+
     }
+
 }
 
- 

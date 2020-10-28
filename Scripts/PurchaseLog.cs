@@ -39,5 +39,6 @@ public class PurchaseLog : MonoBehaviour
         GlobalShop.shopPerSec += 1;
 
         GlobalShop.numberOfShops += 1;
+
     }
 }

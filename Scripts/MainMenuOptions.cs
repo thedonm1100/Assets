@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuOptions : MonoBehaviour
 {
+
     public static bool isLoading = false;
+
     public void NewGame()
     {
         SceneManager.LoadScene(2);
@@ -16,4 +18,6 @@ public class MainMenuOptions : MonoBehaviour
         isLoading = true;
         SceneManager.LoadScene(2);
     }
+
+
 }

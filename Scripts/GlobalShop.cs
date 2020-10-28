@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GlobalShop : MonoBehaviour
 {
+
     public GameObject fakeButton;
     public GameObject fakeText;
     public GameObject realButton;
@@ -16,23 +17,22 @@ public class GlobalShop : MonoBehaviour
     public static int numberOfShops;
     public static int shopPerSec;
 
-   
     void Update()
     {
         currentCash = GlobalCash.CashCount;
         shopStats.GetComponent<Text>().text = "Shops: " + numberOfShops + " @ " + shopPerSec + " Per Second";
         fakeText.GetComponent<Text>().text = "Buy Shop - $" + shopValue;
         realText.GetComponent<Text>().text = "Buy Shop - $" + shopValue;
-
-
-        if (currentCash >= shopValue)
+        if (currentCash >= shopValue && GlobalShop.numberOfShops <= GlobalBaker.numberOfBakers - 1)
         {
             fakeButton.SetActive(false);
             realButton.SetActive(true);
+            
         } else
         {
             fakeButton.SetActive(true);
-                realButton.SetActive(false);
+            realButton.SetActive(false);
+
         }
 
         if (turnOffButton == true)
@@ -41,6 +41,5 @@ public class GlobalShop : MonoBehaviour
             fakeButton.SetActive(true);
             turnOffButton = false;
         }
-
     }
 }
